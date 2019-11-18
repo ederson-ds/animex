@@ -8,7 +8,9 @@ class Persona extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->model('personaModel');
+        $this->load->model('serieModel');
         $data['personas'] = $this->personaModel->get_all();
+        $data['series'] = $this->serieModel->get_all();
         $this->load->view('persona/persona', $data);
     }
 
@@ -16,7 +18,9 @@ class Persona extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->model('personaModel');
+        $this->load->model('serieModel');
         $data['persona'] = $this->personaModel->get($id);
+        $data['series'] = $this->serieModel->get_all();
 
         if ($this->input->post()) {
             $this->personaModel->insert($id);

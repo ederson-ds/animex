@@ -14,22 +14,34 @@
 <div class="container">
     <div class="row">
         <div class="col-3">
-            <a href="<?php echo base_url() . 'persona/create' ?>" class="btn btn-primary form-control" style="margin-bottom: 10px;margin-top: 10px;">Add</a>
+            <a href="<?php echo base_url() . 'serie/create' ?>" class="btn btn-primary form-control" style="margin-bottom: 10px;margin-top: 10px;">Add Série</a>
+        </div>
+        <div class="col-3">
+            <a href="<?php echo base_url() . 'persona/create' ?>" class="btn btn-primary form-control" style="margin-bottom: 10px;margin-top: 10px;">Add Persona</a>
         </div>
     </div>
-    <div class="row">
-        <?php foreach ($personas as $persona) { ?>
-            <div class="col-sm-2">
-                <a href="<?php echo base_url() . 'persona/create/' . $persona->id ?>">
-                    <img class="persona-img" src="<?php echo base_url() . 'uploads/' . $persona->id . '.jpg' ?>" alt="Card image cap" style="border: 1px solid black;">
-                </a>
-                <div style="border: 1px solid;">
-                    <?php echo $persona->name; ?>
-                </div>
-                <div style="border: 1px solid;">
-                    Age: <?php echo $persona->age; ?>
-                </div>
+    <?php foreach ($series as $serie) { ?>
+        <div class="row">
+            <div class="col-12">
+                <div style="background: gainsboro;margin-top: 10px;margin-bottom: 10px;"><a href="<?php echo base_url() . 'serie/create/' . $serie->id ?>" style="color: black;"><?php echo $serie->name ?></a></div>
             </div>
-        <?php } ?>
-    </div>
+        </div>
+        <div class="row">
+            <?php
+                $this->load->model('personaModel');
+                foreach ($this->personaModel->get_by_serie($serie->id) as $persona) { ?>
+                <div class="col-sm-2">
+                    <a href="<?php echo base_url() . 'persona/create/' . $persona->id ?>">
+                        <img class="persona-img" src="<?php echo base_url() . 'uploads/' . $persona->id . '.jpg' ?>" alt="Card image cap" style="border: 1px solid black;">
+                    </a>
+                    <div style="border: 1px solid;">
+                        <?php echo $persona->name; ?>
+                    </div>
+                    <div style="border: 1px solid;">
+                        Age: <?php echo $persona->age; ?>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    <?php } ?>
 </div>

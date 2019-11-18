@@ -5,6 +5,7 @@ class PersonaModel extends CI_Model
 
     public $name;
     public $age;
+    public $series_id;
     public function __construct()
     {
         parent::__construct();
@@ -34,10 +35,21 @@ class PersonaModel extends CI_Model
         return $query->result();
     }
 
+    public function get_by_serie($series_id)
+    {
+        $this->db->select('*');
+        $this->db->from('persona');
+        $this->db->where('series_id', $series_id);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
     public function insert($id)
     {
         $this->name = $this->input->post('name');
         $this->age = $this->input->post('age');
+        $this->series_id = $this->input->post('series_id');
         if ($id) {
             $this->update($id);
             $this->upload($id);

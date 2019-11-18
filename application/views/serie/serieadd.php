@@ -9,26 +9,10 @@
 <div class="container">
     <div class="row" style="margin-top: 100px;">
         <div class="col-5 offset-md-3">
-            <form action="<?php echo base_url() ?>persona/create/<?php echo $persona->id; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <form action="<?php echo base_url() ?>serie/create/<?php echo $serie->id; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                 <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo $persona->name; ?>">
-                </div>
-                <div class="form-group">
-                    <label>Age</label>
-                    <input type="number" name="age" class="form-control" placeholder="Age" value="<?php echo $persona->age; ?>">
-                </div>
-                <div class="form-group">
-                    <label>Image</label>
-                    <input type="file" name="image" class="form-control-file">
-                </div>
-                <div class="form-group">
-                    <label>Serie</label>
-                    <select class="form-control" name="series_id">
-                        <?php foreach ($series as $serie) { ?>
-                            <option <?php echo ($persona->series_id == $serie->id ? 'selected' : '') ?> value="<?php echo $serie->id ?>"><?php echo $serie->name ?></option>
-                        <?php } ?>
-                    </select>
+                    <label>Serie name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo $serie->name; ?>">
                 </div>
                 <div class="form-group">
                     <div class="row">
