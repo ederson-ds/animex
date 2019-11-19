@@ -21,6 +21,8 @@ class Persona extends CI_Controller
         $this->load->model('serieModel');
         $data['persona'] = $this->personaModel->get($id);
         $data['series'] = $this->serieModel->get_all();
+        $data['gender'] = PersonaModel::$genderType;
+        $data['species'] = PersonaModel::$speciesType;
 
         if ($this->input->post()) {
             $this->personaModel->insert($id);
@@ -28,5 +30,13 @@ class Persona extends CI_Controller
         }
 
         $this->load->view('persona/personaadd', $data);
+    }
+
+    public function wiki($id)
+    {
+        $this->load->helper('url');
+        $this->load->model('personaModel');
+        $data['persona'] = $this->personaModel->get($id);
+        $this->load->view('persona/wiki', $data);
     }
 }

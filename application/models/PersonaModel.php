@@ -6,6 +6,18 @@ class PersonaModel extends CI_Model
     public $name;
     public $age;
     public $series_id;
+    public $gender;
+    public $species;
+    const GENDER_MALE = 1, GENDER_FEMALE = 2;
+    const SPECIES_HUMAN = 1, SPECIES_MONSTER = 2;
+    public static $genderType = [
+        self::GENDER_MALE => 'Male',
+        self::GENDER_FEMALE => 'Female',
+    ];
+    public static $speciesType = [
+        self::SPECIES_HUMAN => 'Human',
+        self::SPECIES_MONSTER => 'Monster',
+    ];
     public function __construct()
     {
         parent::__construct();
@@ -50,6 +62,8 @@ class PersonaModel extends CI_Model
         $this->name = $this->input->post('name');
         $this->age = $this->input->post('age');
         $this->series_id = $this->input->post('series_id');
+        $this->gender = $this->input->post('gender');
+        $this->species = $this->input->post('species');
         if ($id) {
             $this->update($id);
             $this->upload($id);

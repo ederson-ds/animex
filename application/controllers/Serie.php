@@ -17,4 +17,12 @@ class Serie extends CI_Controller
 
         $this->load->view('serie/serieadd', $data);
     }
+
+    public function delete($id)
+    {
+        $this->load->helper('url');
+        $this->load->model('serieModel');
+        $this->serieModel->delete($id);
+        redirect('persona', 'refresh');
+    }
 }

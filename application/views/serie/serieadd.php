@@ -19,7 +19,10 @@
                         <div class="col-2">
                             <a href="<?php echo base_url() . 'persona' ?>" class="btn btn-secondary">Back</a>
                         </div>
-                        <div class="col-10">
+                        <div class="col-2">
+                            <a href="<?php echo base_url() . 'serie/delete/' . $serie->id ?>" class="btn btn-danger">Delete</a>
+                        </div>
+                        <div class="col-8">
                             <input type="submit" class="btn btn-primary form-control" value="Send">
                         </div>
                     </div>

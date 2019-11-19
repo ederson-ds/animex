@@ -23,6 +23,22 @@
                     <input type="file" name="image" class="form-control-file">
                 </div>
                 <div class="form-group">
+                    <label>Gender</label>
+                    <select class="form-control" name="gender">
+                        <?php foreach ($gender as $i => $genderr) { ?>
+                            <option <?php echo ($persona->gender == $i ? 'selected' : '') ?> value="<?php echo $i ?>"><?php echo $genderr ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Species</label>
+                    <select class="form-control" name="species">
+                        <?php foreach ($species as $i => $specie) { ?>
+                            <option <?php echo ($persona->species == $i ? 'selected' : '') ?> value="<?php echo $i ?>"><?php echo $specie ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Serie</label>
                     <select class="form-control" name="series_id">
                         <?php foreach ($series as $serie) { ?>
