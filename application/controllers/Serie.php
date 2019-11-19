@@ -15,6 +15,7 @@ class Serie extends CI_Controller
             redirect('persona', 'refresh');
         }
 
+        $this->load->view('navbar', $data);
         $this->load->view('serie/serieadd', $data);
     }
 

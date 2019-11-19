@@ -11,6 +11,7 @@ class Persona extends CI_Controller
         $this->load->model('serieModel');
         $data['personas'] = $this->personaModel->get_all();
         $data['series'] = $this->serieModel->get_all();
+        $this->load->view('navbar', $data);
         $this->load->view('persona/persona', $data);
     }
 
@@ -29,6 +30,7 @@ class Persona extends CI_Controller
             redirect('persona', 'refresh');
         }
 
+        $this->load->view('navbar', $data);
         $this->load->view('persona/personaadd', $data);
     }
 
@@ -37,6 +39,8 @@ class Persona extends CI_Controller
         $this->load->helper('url');
         $this->load->model('personaModel');
         $data['persona'] = $this->personaModel->get($id);
+
+        $this->load->view('navbar', $data);
         $this->load->view('persona/wiki', $data);
     }
 }
