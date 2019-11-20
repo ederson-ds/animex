@@ -31,6 +31,14 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label>Rarity</label>
+                    <select class="form-control" name="rarity">
+                        <?php foreach ($rarities as $i => $rarity) { ?>
+                            <option <?php echo ($persona->rarity == $i ? 'selected' : '') ?> value="<?php echo $i ?>"><?php echo $rarity ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Serie</label>
                     <select class="form-control" name="series_id">
                         <?php foreach ($series as $serie) { ?>

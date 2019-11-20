@@ -38,9 +38,11 @@ class SerieModel extends CI_Model
         $this->name = $this->input->post('name');
         if ($id) {
             $this->update($id);
+            $this->upload($id);
             return;
         }
         $this->db->insert('series', $this);
+        $this->upload($this->db->insert_id());
     }
 
     public function update($id)
@@ -51,6 +53,21 @@ class SerieModel extends CI_Model
     public function delete($id)
     {
         $this->db->delete('series', array('id' => $id));
+    }
+
+    public function upload($filename)
+    {
+        $config['upload_path']          = './uploads/series/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        //$config['max_size']             = 100;
+        //$config['max_width']            = 1024;
+        //$config['max_height']           = 768;
+        $config['file_name']            = $filename;
+        $config['overwrite']            = TRUE;
+
+        $this->load->library('upload', $config);
+
+        $this->upload->do_upload('image');
     }
 
     public function createEmptyObject()

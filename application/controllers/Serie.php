@@ -8,6 +8,7 @@ class Serie extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->model('serieModel');
+        $data['id'] = $id;
         $data['serie'] = $this->serieModel->get($id);
 
         if ($this->input->post()) {

@@ -8,8 +8,10 @@ class PersonaModel extends CI_Model
     public $series_id;
     public $gender;
     public $species;
+    public $rarity;
     const GENDER_MALE = 1, GENDER_FEMALE = 2;
     const SPECIES_HUMAN = 1, SPECIES_MONSTER = 2;
+    const RARITY_VERY_RARE = 0, RARITY_EPIC = 1, RARITY_LEGENDARY = 2;
     public static $genderType = [
         self::GENDER_MALE => 'Male',
         self::GENDER_FEMALE => 'Female',
@@ -17,6 +19,11 @@ class PersonaModel extends CI_Model
     public static $speciesType = [
         self::SPECIES_HUMAN => 'Human',
         self::SPECIES_MONSTER => 'Monster',
+    ];
+    public static $rarityType = [
+        self::RARITY_VERY_RARE => 'Very Rare',
+        self::RARITY_EPIC => 'Epic',
+        self::RARITY_LEGENDARY => 'Legendary',
     ];
     public function __construct()
     {
@@ -64,6 +71,7 @@ class PersonaModel extends CI_Model
         $this->series_id = $this->input->post('series_id');
         $this->gender = $this->input->post('gender');
         $this->species = $this->input->post('species');
+        $this->rarity = $this->input->post('rarity');
         if ($id) {
             $this->update($id);
             $this->upload($id);
@@ -96,6 +104,18 @@ class PersonaModel extends CI_Model
     public function delete($id)
     {
         $this->db->delete('persona', array('id' => $id));
+    }
+
+    public static function getRarity($rarity)
+    {
+        if ($rarity == self::RARITY_VERY_RARE) {
+            return 'very-rare';
+        } else  if ($rarity == self::RARITY_EPIC) {
+            return 'epic';
+        } else  if ($rarity == self::RARITY_LEGENDARY) {
+            return 'legendary';
+        }
+        return '';
     }
 
     public function createEmptyObject()

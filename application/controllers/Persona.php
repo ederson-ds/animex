@@ -24,6 +24,7 @@ class Persona extends CI_Controller
         $data['series'] = $this->serieModel->get_all();
         $data['gender'] = PersonaModel::$genderType;
         $data['species'] = PersonaModel::$speciesType;
+        $data['rarities'] = PersonaModel::$rarityType;
 
         if ($this->input->post()) {
             $this->personaModel->insert($id);
