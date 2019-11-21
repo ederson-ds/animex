@@ -7,8 +7,8 @@
 
 <style>
     .persona-img {
-        width: 100%;
-        height: 150px;
+        width: 80px;
+        height: 80px;
     }
 
     .nav-link {
@@ -28,12 +28,12 @@
         border: 1px solid;
         padding: 7px;
     }
+
     .navbar-light .navbar-brand:hover {
         color: white;
         border: 1px solid;
         padding: 7px;
     }
-}
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

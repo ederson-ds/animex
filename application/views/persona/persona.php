@@ -21,6 +21,38 @@
     body {
         background: gainsboro;
     }
+
+    .col-xs-1-10,
+    .col-sm-1-10 {
+        position: relative;
+        min-height: 1px;
+    }
+
+    .col-xs-1-10 {
+        width: 10%;
+        float: left;
+    }
+
+    @media (min-width: 768px) {
+        .col-sm-1-10 {
+            width: 10%;
+            float: left;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .col-md-1-10 {
+            width: 10%;
+            float: left;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .col-lg-1-10 {
+            width: 10%;
+            float: left;
+        }
+    }
 </style>
 
 <div class="container">
@@ -33,13 +65,7 @@
                             <a href="<?php echo base_url() . 'serie/create/' . $serie->id ?>" style="color: black;"><b><?php echo $serie->name ?></b></a>
                         </div>
                         <div class="col-4">
-                            <img class="serieLogo" src="<?php
-                                                            if (file_exists($_SERVER['DOCUMENT_ROOT'] . verifyLocalhost() . '/uploads/series/' . $serie->id . '.png')) {
-                                                                echo base_url() . 'uploads/series/' . $serie->id . '.png';
-                                                            } else {
-                                                                echo base_url() . 'uploads/series/' . $serie->id . '.jpg';
-                                                            }
-                                                            ?>" alt="Serie Logo">
+                            <img class="serieLogo" src="<?php echo getSerieImage($serie->id) ?>" alt="Serie Logo">
                         </div>
                         <div class="col-4">
                             <a href="<?php echo base_url() . 'serie/create/' . $serie->id ?>" style="color: black;"><b><?php echo $serie->name ?></b></a>
@@ -52,17 +78,11 @@
             <?php
                 $this->load->model('personaModel');
                 foreach ($this->personaModel->get_by_serie($serie->id) as $persona) { ?>
-                <div class="col-sm-2">
-                    <div class="<?php echo PersonaModel::getRarity($persona->rarity) ?>" style="border: 1px solid;border-radius: 10px;text-align: center;">
+                <div class="col-sm-1-10" style="padding: 0 !important;">
+                    <div class="<?php echo PersonaModel::getRarity($persona->rarity) ?>" style="border: 1px solid;border-radius: 10px;text-align: center;width: 102px;margin-top: 10px;">
                         <a href="<?php echo base_url() . 'persona/wiki/' . $persona->id ?>">
                             <div style="padding: 10px 10px 0;">
-                                <img class="persona-img" src="<?php
-                                                                        if (file_exists($_SERVER['DOCUMENT_ROOT'] . verifyLocalhost() . '/uploads/' . $persona->id . '.png')) {
-                                                                            echo base_url() . 'uploads/' . $persona->id . '.png';
-                                                                        } else {
-                                                                            echo base_url() . 'uploads/' . $persona->id . '.jpg';
-                                                                        }
-                                                                        ?>" alt="Card image cap" style="border: 1px solid white;">
+                                <img class="persona-img" src="<?php echo getPersonaImage($persona->id) ?>" alt="Card image cap" style="border: 1px solid white;">
                             </div>
 
                         </a>

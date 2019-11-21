@@ -20,6 +20,7 @@ class Persona extends CI_Controller
         $this->load->helper('url');
         $this->load->model('personaModel');
         $this->load->model('serieModel');
+        $data['id'] = $id;
         $data['persona'] = $this->personaModel->get($id);
         $data['series'] = $this->serieModel->get_all();
         $data['gender'] = PersonaModel::$genderType;
@@ -33,6 +34,14 @@ class Persona extends CI_Controller
 
         $this->load->view('navbar', $data);
         $this->load->view('persona/personaadd', $data);
+    }
+
+    public function delete($id)
+    {
+        $this->load->helper('url');
+        $this->load->model('personaModel');
+        $this->personaModel->delete($id);
+        redirect('persona', 'refresh');
     }
 
     public function wiki($id)

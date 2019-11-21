@@ -51,7 +51,12 @@
                         <div class="col-2">
                             <a href="<?php echo base_url() . 'persona' ?>" class="btn btn-secondary">Back</a>
                         </div>
-                        <div class="col-10">
+                        <?php if (isset($id)) { ?>
+                            <div class="col-2">
+                                <a href="<?php echo base_url() . 'persona/delete/' . $serie->id ?>" class="btn btn-danger">Delete</a>
+                            </div>
+                        <?php } ?>
+                        <div class="col-8">
                             <input type="submit" class="btn btn-primary form-control" value="Send">
                         </div>
                     </div>
