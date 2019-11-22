@@ -53,7 +53,7 @@
                         </div>
                         <?php if (isset($id)) { ?>
                             <div class="col-2">
-                                <a href="<?php echo base_url() . 'persona/delete/' . $serie->id ?>" class="btn btn-danger">Delete</a>
+                                <a href="<?php echo base_url() . 'persona/delete/' . $persona->id ?>" class="btn btn-danger">Delete</a>
                             </div>
                         <?php } ?>
                         <div class="col-8">

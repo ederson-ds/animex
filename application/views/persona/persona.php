@@ -79,7 +79,7 @@
                 $this->load->model('personaModel');
                 foreach ($this->personaModel->get_by_serie($serie->id) as $persona) { ?>
                 <div class="col-sm-1-10" style="padding: 0 !important;">
-                    <div class="<?php echo PersonaModel::getRarity($persona->rarity) ?>" style="border: 1px solid;border-radius: 10px;text-align: center;width: 102px;margin-top: 10px;">
+                    <div class="<?php echo PersonaModel::getRarity($persona->rarity) ?>" style="border: 1px solid;border-radius: 10px;text-align: center;width: 102px;margin-top: 10px;font-size: 10pt;">
                         <a href="<?php echo base_url() . 'persona/wiki/' . $persona->id ?>">
                             <div style="padding: 10px 10px 0;">
                                 <img class="persona-img" src="<?php echo getPersonaImage($persona->id) ?>" alt="Card image cap" style="border: 1px solid white;">
