@@ -10,7 +10,7 @@ class PersonaModel extends CI_Model
     public $species;
     public $rarity;
     const GENDER_MALE = 1, GENDER_FEMALE = 2;
-    const SPECIES_HUMAN = 1, SPECIES_MONSTER = 2;
+    const SPECIES_HUMAN = 1, SPECIES_MONSTER = 2, SPECIES_FAUN = 3;
     const RARITY_VERY_RARE = 0, RARITY_EPIC = 1, RARITY_LEGENDARY = 2;
     public static $genderType = [
         self::GENDER_MALE => 'Male',
@@ -19,6 +19,7 @@ class PersonaModel extends CI_Model
     public static $speciesType = [
         self::SPECIES_HUMAN => 'Human',
         self::SPECIES_MONSTER => 'Monster',
+        self::SPECIES_FAUN => 'Faun',
     ];
     public static $rarityType = [
         self::RARITY_VERY_RARE => 'Very Rare',

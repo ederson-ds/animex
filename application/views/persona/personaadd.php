@@ -1,3 +1,19 @@
+<!-- Ion Slider -->
+<link rel="stylesheet" href="<?php echo base_url() ?>plugins/ion-rangeslider/css/ion.rangeSlider.min.css">
+<!-- Ion Slider -->
+<script src="<?php echo base_url() ?>plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+<style>
+
+.irs--flat .irs-bar, .irs--flat .irs-handle>i:first-child, .irs--flat .irs-bar, .irs-handle .single i,
+.irs-single {
+    background-color: #5093bf !important;
+}
+
+.irs-single:before {
+    border-top-color: #5093bf !important;
+}
+
+</style>
 <div class="container">
     <div class="row" style="margin-top: 100px;">
         <div class="col-5 offset-md-3">
@@ -39,6 +55,10 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label>Speed</label>
+                    <input id="speed" type="text" name="speed" value="">
+                </div>
+                <div class="form-group">
                     <label>Serie</label>
                     <select class="form-control" name="series_id">
                         <?php foreach ($series as $serie) { ?>
@@ -65,3 +85,19 @@
         </div>
     </div>
 </div>
+
+<script>
+
+$('#speed').ionRangeSlider({
+      min     : 1,
+      max     : 10,
+      from    : 1,
+      type    : 'single',
+      step    : 1,
+      postfix : '',
+      prettify: false,
+      hasGrid : true,
+      skin: "flat"
+    })
+
+</script>

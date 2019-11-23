@@ -17,13 +17,29 @@
             </div>
         </div>
         <div class="col-4" style="background: blue;">
-            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: teal;">
+            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: teal;font-weight: bold;">
                 <?php echo $persona->name ?>
             </div>
             <div class="row" style="text-align: center;display: block;">
                 <a href="<?php echo base_url() . 'persona/create/' . $persona->id ?>">
                     <img src="<?php echo getPersonaImage($persona->id) ?>" alt="Character Image" style="border: 1px solid white;">
                 </a>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    Species:
+                </div>
+                <div class="col-6">
+                    <?php echo PersonaModel::$speciesType[$persona->species] ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    Gender:
+                </div>
+                <div class="col-6">
+                    <?php echo PersonaModel::$genderType[$persona->gender] ?>
+                </div>
             </div>
         </div>
     </div>
