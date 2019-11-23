@@ -25,8 +25,11 @@ class SerieModel extends CI_Model
             $this->db->select('*');
             $this->db->from('series');
             $this->db->like("name", $pesquisar);
+            $this->db->order_by("name", "ASC");
             $query = $this->db->get();
         } else {
+            $this->db->order_by("name");
+            $this->db->limit(10);
             $query = $this->db->get('series');
         }
 
