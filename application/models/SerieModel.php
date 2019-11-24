@@ -87,7 +87,11 @@ class SerieModel extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('series');
-        $this->db->where("id", $personas[0]->series_id);
+        if(isset($personas[0]->series_id)) {
+            $this->db->where("id", $personas[0]->series_id);
+        } else {
+            $this->db->where("id", null);
+        }
         foreach ($personas as $i => $persona) {
             if($i != 0) {
                 $this->db->or_where("id", $personas[$i]->series_id);

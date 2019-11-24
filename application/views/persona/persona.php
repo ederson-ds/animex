@@ -57,10 +57,6 @@
 
 <div class="container">
 
-    <?php
-    if ($searchText) { } else { }
-
-    ?>
     <?php foreach ($series as $serie) { ?>
         <div class="row">
             <div class="col-12">
@@ -81,7 +77,7 @@
         </div>
         <div class="row">
             <?php
-                if (!$searchText) {
+                if (!isset($searchText) || $type == 'serie') {
                     $this->load->model('personaModel');
                     $personas = $this->personaModel->get_by_serie($serie->id);
                 }

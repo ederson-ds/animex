@@ -4,15 +4,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Persona extends CI_Controller
 {
 
-    public function index($searchText = null)
+    public function index($data = null)
     {
         $this->load->helper('url');
         $this->load->model('personaModel');
         $this->load->model('serieModel');
-        $data['searchText'] = $searchText;
+        $searchText = $data["searchText"];
         if ($searchText) {
-            $data['personas'] = $this->personaModel->get_all($searchText);
-            $data['series'] = $this->serieModel->get_serie_by_personas($data['personas']);
+            if ($data["type"] == 'serie') {
+                $data['series'] = $this->serieModel->get_all($searchText);
+            } else {
+                $data['personas'] = $this->personaModel->get_all($searchText);
+                $data['series'] = $this->serieModel->get_serie_by_personas($data['personas']);
+            }
         } else {
             $data['personas'] = $this->personaModel->get_all();
             $data['series'] = $this->serieModel->get_all();
@@ -62,6 +66,8 @@ class Persona extends CI_Controller
 
     public function search()
     {
-        $this->index($this->input->get("searchText"));
+        $data["type"] = $this->input->get("type");
+        $data["searchText"] = $this->input->get("searchText");
+        $this->index($data);
     }
 }
