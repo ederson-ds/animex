@@ -82,4 +82,20 @@ class SerieModel extends CI_Model
         $obj->id = null;
         return $obj;
     }
+
+    public function get_serie_by_personas($personas)
+    {
+        $this->db->select('*');
+        $this->db->from('series');
+        $this->db->where("id", $personas[0]->series_id);
+        foreach ($personas as $i => $persona) {
+            if($i != 0) {
+                $this->db->or_where("id", $personas[$i]->series_id);
+            }
+        }
+        $this->db->order_by("name", "ASC");
+        $query = $this->db->get();
+
+        return $query->result();
+    }
 }

@@ -60,8 +60,8 @@
                 <a class="nav-link" href="#">Documentation</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+        <form action="<?php echo base_url() . 'persona/search' ?>" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" name="searchText">
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>
     </div>
