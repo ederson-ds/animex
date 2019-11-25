@@ -34,6 +34,14 @@
         border: 1px solid;
         padding: 7px;
     }
+
+    .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .custom-select {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E")
+    }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,8 +68,13 @@
                 <a class="nav-link" href="#">Documentation</a>
             </li>
         </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+        </ul>
         <form action="<?php echo base_url() . 'persona/search' ?>" class="form-inline my-2 my-lg-0">
-            <select class="mr-1" name="type">
+            <select class="custom-select mr-1" name="type" style="background-color: #253f58;color: white;">
                 <option value="character">Character</option>
                 <option value="serie">Serie</option>
             </select>
