@@ -70,7 +70,7 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="<?php echo base_url() . 'login' ?>">Login</a>
             </li>
         </ul>
         <form action="<?php echo base_url() . 'persona/search' ?>" class="form-inline my-2 my-lg-0">
