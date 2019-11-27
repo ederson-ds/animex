@@ -16,6 +16,9 @@ class Serie extends CI_Controller
             redirect('persona', 'refresh');
         }
 
+        $this->load->library('session');
+        $data["username"] = $this->session->name;
+
         $this->load->view('navbar', $data);
         $this->load->view('serie/serieadd', $data);
     }
