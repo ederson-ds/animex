@@ -1,17 +1,47 @@
 <style>
     .very-rare {
-        background: #1f6ba0;
-        color: #90b8ff;
+        background: #073763;
+        color: #3d85c6;
     }
 
     .epic {
-        background: #681f69;
-        color: #c844ff;
+        background: #4c1130;
+        color: #a64d79;
     }
 
     .legendary {
-        background: #ce9238;
-        color: #ffe7b0;
+        background: #7f6000;
+        color: #f1c232;
+    }
+
+    .common {
+        background: #666666;
+        color: #cccccc;
+    }
+
+    .rare {
+        background: #274e13;
+        color: #6aa84f;
+    }
+
+    .empyrean {
+        background: #8e7cc3;
+        color: #d9d2e9;
+    }
+
+    .true-divinity {
+        background: #8910af;
+        color: #e57aff;
+    }
+
+    .void-tier {
+        background: #000000;
+        color: #434343;
+    }
+
+    .god {
+        background: #f3f3f3;
+        color: #b4a7d6;
     }
 
     .serieLogo {

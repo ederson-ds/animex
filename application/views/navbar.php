@@ -7,8 +7,8 @@
 
 <style>
     body {
-        background: rgb(236, 236, 236);
-        background: radial-gradient(circle, rgba(236, 236, 236, 1) 0%, rgba(154, 154, 154, 1) 66%);
+        background: rgb(154, 154, 154);
+        background: linear-gradient(90deg, rgba(154, 154, 154, 1) 0%, rgba(236, 236, 236, 1) 38%, rgba(236, 236, 236, 1) 64%, rgba(154, 154, 154, 1) 100%);
     }
 
     .persona-img {

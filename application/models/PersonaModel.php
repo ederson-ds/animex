@@ -11,7 +11,12 @@ class PersonaModel extends CI_Model
     public $rarity;
     const GENDER_MALE = 1, GENDER_FEMALE = 2;
     const SPECIES_HUMAN = 1, SPECIES_MONSTER = 2, SPECIES_FAUN = 3;
-    const RARITY_VERY_RARE = 0, RARITY_EPIC = 1, RARITY_LEGENDARY = 2;
+    const RARITY_VERY_RARE = 0, RARITY_EPIC = 1, RARITY_LEGENDARY = 2, RARITY_COMMON = 3,
+        RARITY_RARE = 4,
+        RARITY_EMPYREAN = 5,
+        RARITY_TRUE_DIVINITY = 6,
+        RARITY_VOID_TIER = 7,
+        RARITY_GOD = 8;
     public static $genderType = [
         self::GENDER_MALE => 'Male',
         self::GENDER_FEMALE => 'Female',
@@ -25,6 +30,12 @@ class PersonaModel extends CI_Model
         self::RARITY_VERY_RARE => 'Very Rare',
         self::RARITY_EPIC => 'Epic',
         self::RARITY_LEGENDARY => 'Legendary',
+        self::RARITY_COMMON => 'Common',
+        self::RARITY_RARE => 'Rare',
+        self::RARITY_EMPYREAN => 'Empyrean',
+        self::RARITY_TRUE_DIVINITY => 'True Divinity',
+        self::RARITY_VOID_TIER => 'Void Tier',
+        self::RARITY_GOD => 'God',
     ];
     public function __construct()
     {
@@ -111,10 +122,22 @@ class PersonaModel extends CI_Model
     {
         if ($rarity == self::RARITY_VERY_RARE) {
             return 'very-rare';
-        } else  if ($rarity == self::RARITY_EPIC) {
+        } else if ($rarity == self::RARITY_EPIC) {
             return 'epic';
-        } else  if ($rarity == self::RARITY_LEGENDARY) {
+        } else if ($rarity == self::RARITY_LEGENDARY) {
             return 'legendary';
+        } else if ($rarity == self::RARITY_COMMON) {
+            return 'common';
+        } else if ($rarity == self::RARITY_RARE) {
+            return 'rare';
+        } else if ($rarity == self::RARITY_EMPYREAN) {
+            return 'empyrean';
+        } else if ($rarity == self::RARITY_TRUE_DIVINITY) {
+            return 'true-divinity';
+        } else if ($rarity == self::RARITY_VOID_TIER) {
+            return 'void-tier';
+        } else if ($rarity == self::RARITY_GOD) {
+            return 'god';
         }
         return '';
     }
