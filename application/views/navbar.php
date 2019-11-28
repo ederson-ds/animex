@@ -6,6 +6,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <style>
+    body {
+        background: rgb(236, 236, 236);
+        background: radial-gradient(circle, rgba(236, 236, 236, 1) 0%, rgba(154, 154, 154, 1) 66%);
+    }
+
     .persona-img {
         width: 80px;
         height: 80px;
@@ -45,7 +50,7 @@
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="<?php echo base_url() ?>">LOGO PLACEHOLDER</a>
+    <img src="<?php echo base_url() . 'dist/logo.png' ?>" alt="logo" width="150">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -69,13 +74,16 @@
             </li>
         </ul>
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <?php if ($username) { ?>
-                    <a class="nav-link" href="<?php echo base_url() . 'login' ?>"><?php echo $username; ?></a>
-                <?php } else { ?>
+            <?php if ($username) { ?>
+                <a class="nav-link" href="<?php echo base_url() . 'user' ?>"><?php echo $username; ?></a>
+            <?php } else { ?>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url() . 'login' ?>">Login</a>
-                <?php } ?>
-            </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url() . 'login/signup' ?>">Sign Up</a>
+                </li>
+            <?php } ?>
         </ul>
         <form action="<?php echo base_url() . 'persona/search' ?>" class="form-inline my-2 my-lg-0">
             <select class="custom-select mr-1" name="type" style="background-color: #253f58;color: white;">

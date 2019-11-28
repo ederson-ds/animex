@@ -27,6 +27,7 @@ class Persona extends CI_Controller
 
         $this->load->view('navbar', $data);
         $this->load->view('persona/persona', $data);
+        $this->load->view('persona/footer', $data);
     }
 
     public function create($id = null)

@@ -1,19 +1,7 @@
-<!-- Ion Slider -->
-<link rel="stylesheet" href="<?php echo base_url() ?>plugins/ion-rangeslider/css/ion.rangeSlider.min.css">
-<!-- Ion Slider -->
-<script src="<?php echo base_url() ?>plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
-<style>
-
-.irs--flat .irs-bar, .irs--flat .irs-handle>i:first-child, .irs--flat .irs-bar, .irs-handle .single i,
-.irs-single {
-    background-color: #5093bf !important;
-}
-
-.irs-single:before {
-    border-top-color: #5093bf !important;
-}
-
-</style>
+<!-- Select2 -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+<link rel="stylesheet" href="https://select2.github.io/select2-bootstrap-theme/css/select2-bootstrap.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>
 <div class="container">
     <div class="row" style="margin-top: 100px;">
         <div class="col-5 offset-md-3">
@@ -32,35 +20,23 @@
                 </div>
                 <div class="form-group">
                     <label>Gender</label>
-                    <select class="form-control" name="gender">
-                        <?php foreach ($gender as $i => $genderr) { ?>
-                            <option <?php echo ($persona->gender == $i ? 'selected' : '') ?> value="<?php echo $i ?>"><?php echo $genderr ?></option>
-                        <?php } ?>
-                    </select>
+                    <input type="text" name="gender" class="form-control" placeholder="Gender" value="<?php echo $persona->gender; ?>">
                 </div>
                 <div class="form-group">
                     <label>Species</label>
-                    <select class="form-control" name="species">
-                        <?php foreach ($species as $i => $specie) { ?>
-                            <option <?php echo ($persona->species == $i ? 'selected' : '') ?> value="<?php echo $i ?>"><?php echo $specie ?></option>
-                        <?php } ?>
-                    </select>
+                    <input type="text" name="species" class="form-control" placeholder="Species" value="<?php echo $persona->species; ?>">
                 </div>
                 <div class="form-group">
                     <label>Rarity</label>
-                    <select class="form-control" name="rarity">
+                    <select class="form-control select2-single" name="rarity">
                         <?php foreach ($rarities as $i => $rarity) { ?>
                             <option <?php echo ($persona->rarity == $i ? 'selected' : '') ?> value="<?php echo $i ?>"><?php echo $rarity ?></option>
                         <?php } ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Speed</label>
-                    <input id="speed" type="text" name="speed" value="">
-                </div>
-                <div class="form-group">
                     <label>Serie</label>
-                    <select class="form-control" name="series_id">
+                    <select class="form-control select2-single" name="series_id">
                         <?php foreach ($series as $serie) { ?>
                             <option <?php echo ($persona->series_id == $serie->id ? 'selected' : '') ?> value="<?php echo $serie->id ?>"><?php echo $serie->name ?></option>
                         <?php } ?>
@@ -87,17 +63,12 @@
 </div>
 
 <script>
-
-$('#speed').ionRangeSlider({
-      min     : 1,
-      max     : 10,
-      from    : 1,
-      type    : 'single',
-      step    : 1,
-      postfix : '',
-      prettify: false,
-      hasGrid : true,
-      skin: "flat"
-    })
-
+    $(document).ready(function() {
+        $(".select2-single").select2({
+            theme: "bootstrap",
+            placeholder: "Select a State",
+            maximumSelectionSize: 6,
+            containerCssClass: ':all:'
+        });
+    });
 </script>

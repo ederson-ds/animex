@@ -30,7 +30,7 @@
                     Species:
                 </div>
                 <div class="col-6">
-                    <?php echo PersonaModel::$speciesType[$persona->species] ?>
+                    <?php echo $persona->species ?>
                 </div>
             </div>
             <div class="row">
@@ -38,7 +38,7 @@
                     Gender:
                 </div>
                 <div class="col-6">
-                    <?php echo PersonaModel::$genderType[$persona->gender] ?>
+                    <?php echo $persona->gender ?>
                 </div>
             </div>
         </div>

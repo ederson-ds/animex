@@ -18,10 +18,6 @@
         width: 200px;
     }
 
-    body {
-        background: gainsboro;
-    }
-
     .col-xs-1-10,
     .col-sm-1-10 {
         position: relative;
