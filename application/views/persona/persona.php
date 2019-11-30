@@ -45,7 +45,8 @@
     }
 
     .serieLogo {
-        width: 200px;
+        max-width: 380px;
+        max-height: 100px;
     }
 
     .col-xs-1-10,
