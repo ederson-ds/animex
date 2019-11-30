@@ -22,7 +22,7 @@
             </div>
             <div class="row" style="text-align: center;display: block;">
                 <a href="<?php echo base_url() . 'persona/create/' . $persona->id ?>">
-                    <img src="<?php echo getPersonaImage($persona->id) ?>" alt="Character Image" style="border: 1px solid white;">
+                    <img src="<?php echo getPersonaImage($persona->id) ?>" alt="Character Image" style="border: 1px solid white;" width="310" height="413">
                 </a>
             </div>
             <div class="row">
