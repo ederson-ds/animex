@@ -51,7 +51,7 @@
 </style>
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="font-size: 12pt !important">
-    <img src="<?php echo base_url() . 'dist/logo.png' ?>" alt="logo" width="150">
+    <img src="<?php echo base_url() . 'dist/logo.png' ?>" alt="logo" width="150" style="margin-right: 16px;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
     </button>
