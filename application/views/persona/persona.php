@@ -82,7 +82,7 @@
     }
 </style>
 
-<div class="container" style="margin-top: 58px;">
+<div class="container" style="margin-top: 58px;padding-left: 50px;">
 
     <?php foreach ($series as $serie) { ?>
         <div class="row">
