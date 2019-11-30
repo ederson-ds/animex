@@ -9,6 +9,7 @@
     body {
         background: rgb(154, 154, 154);
         background: linear-gradient(90deg, rgba(154, 154, 154, 1) 0%, rgba(236, 236, 236, 1) 38%, rgba(236, 236, 236, 1) 64%, rgba(154, 154, 154, 1) 100%);
+        font-size: 12pt;
     }
 
     .persona-img {
@@ -49,7 +50,7 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="font-size: 12pt !important">
     <img src="<?php echo base_url() . 'dist/logo.png' ?>" alt="logo" width="150">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
