@@ -82,7 +82,7 @@
                     <a class="nav-link" href="<?php echo base_url() . 'login' ?>">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url() . 'login/signup' ?>">Sign Up</a>
+                    <a class="nav-link" href="<?php echo base_url() . 'login/signup' ?>" style="padding-right: 15px;">Sign Up</a>
                 </li>
             <?php } ?>
         </ul>
