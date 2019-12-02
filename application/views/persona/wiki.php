@@ -17,12 +17,12 @@
             </div>
         </div>
         <div class="col-4" style="background: blue;">
-            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: teal;font-weight: bold;">
+            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: teal;font-weight: bold;line-height: 50px;">
                 <?php echo $persona->name ?>
             </div>
             <div class="row" style="text-align: center;display: block;">
                 <a href="<?php echo base_url() . 'persona/create/' . $persona->id ?>">
-                    <img src="<?php echo getPersonaImage($persona->id) ?>" alt="Character Image" style="border: 1px solid white;" width="310" height="413">
+                    <img src="<?php echo getPersonaImage($persona->id) ?>" alt="Character Image" width="310" height="413">
                 </a>
             </div>
             <div class="row">
