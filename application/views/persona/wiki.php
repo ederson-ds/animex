@@ -2,8 +2,13 @@
     <div class="row">
         <div class="col-8" style="background: #003838; color: #FDD1BF">
             <div class="description" style="margin: 15px;">
-                The path of the martial artist is like a flame. Practicing the martial arts will only cause pain. The dangers are countless and the road is filled with obstacles. Everyone who walks down it will eventually turn to ash, but the true martial artist will be reborn from these ashes. Even if I was only a small and weak moth, I will walk into the flames without hesitation. I will fight my destiny for a one in a million chance that I will experience my own samsara and be reborn into a flaming phoenix. And even now, I am no longer a moth.
+                <div font-style="italic;">
+                    "The path of the martial artist is like a flame. Practicing the martial arts will only cause pain. The dangers are countless and the road is filled with obstacles. Everyone who walks down it will eventually turn to ash, but the true martial artist will be reborn from these ashes. Even if I was only a small and weak moth, I will walk into the flames without hesitation. I will fight my destiny for a one in a million chance that I will experience my own samsara and be reborn into a flaming phoenix. And even now, I am no longer a moth."
+                </div>
                 </br></br>
+                <div class="header" style="background: #002A32;margin: 20px 0;text-align: center; font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif; font-size: 18px; font-weight: bold; color: white;">
+                    Summary
+                </div>
                 Lin Ming is the main character of the novel Martial World. Once a common youth with average talent, until he found a strange cube that changed his destiny and set him on the path to becoming the greatest cultivator in the 33 heavens and 18 abysses.
                 <div class="header" style="background: #002A32;margin: 20px 0;text-align: center; font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif; font-size: 18px; font-weight: bold; color: white;">
                     Powers and Stats
