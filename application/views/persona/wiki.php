@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4" style="background: #544C4D;">
+        <div class="col-4" style="background: #544C4D; color: #D5D4D4">
             <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 50px;">
                 <?php echo $persona->name ?>
             </div>
