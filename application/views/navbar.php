@@ -18,6 +18,7 @@
     }
 
     .nav-link {
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
         color: aqua !important;
     }
 
@@ -76,7 +77,7 @@
         </ul>
         <ul class="navbar-nav">
             <?php if ($username) { ?>
-                <a class="nav-link" href="<?php echo base_url() . 'user' ?>"><?php echo $username; ?></a>
+                <a class="nav-link" href="<?php echo base_url() . 'user' ?>" style="padding-right: 15px"><?php echo $username; ?></a>
             <?php } else { ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url() . 'login' ?>">Login</a>
