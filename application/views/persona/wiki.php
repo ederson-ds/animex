@@ -37,7 +37,7 @@
                     林铭
                 </div>
             </div>
-            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 50px;">
+            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;">
                 Physical Description
             </div>
             <div class="row">
@@ -56,7 +56,7 @@
                     <?php echo $persona->gender ?>
                 </div>
             </div>
-            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 50px;">
+            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;">
                 Stats
             </div>
             <div class="row">
@@ -99,7 +99,7 @@
                     <b>Intelligence:</b>
                 </div>
             </div>
-            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 50px;">
+            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;">
                 Appearances
             </div>
             <div class="row">
