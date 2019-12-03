@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
 <link rel="stylesheet" href="https://select2.github.io/select2-bootstrap-theme/css/select2-bootstrap.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>
-<div class="container">
+<div class="container" style="padding-left: 100px">
     <div class="row" style="margin-top: 100px;">
         <div class="col-5 offset-md-3">
             <form action="<?php echo base_url() ?>persona/create/<?php echo $persona->id; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
