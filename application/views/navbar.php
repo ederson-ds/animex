@@ -77,7 +77,7 @@
         </ul>
         <ul class="navbar-nav">
             <?php if ($username) { ?>
-                <a class="nav-link" href="<?php echo base_url() . 'user' ?>"><?php echo $username; ?></a>
+                <a class="nav-link" href="<?php echo base_url() . 'user' ?>" style="padding-right: 15px"><?php echo $username; ?></a>
             <?php } else { ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url() . 'login' ?>">Login</a>
