@@ -1,3 +1,13 @@
+<style>
+    #personaName {
+        text-align: center;
+        display: block;
+        font-size: 18pt;
+        background: #026575;
+        font-weight: bold;
+        color: white;
+    }
+</style>
 <div class="container" style="margin-top: 133px;">
     <div class="row">
         <div class="col-8" style="background: gray;">
@@ -16,8 +26,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-4" style="background: blue;">
-            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: teal;font-weight: bold;">
+        <div class="col-4" style="background: blue;width: 310px;flex: 0;">
+            <div class="row" id='personaName'>
                 <?php echo $persona->name ?>
             </div>
             <div class="row" style="text-align: center;display: block;">

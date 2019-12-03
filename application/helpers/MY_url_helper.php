@@ -2,7 +2,7 @@
 
 function verifyLocalhost()
 {
-    if ($_SERVER['DOCUMENT_ROOT'] == 'C:/xampp/htdocs') {
+    if ($_SERVER['DOCUMENT_ROOT'] == 'C:/xampp/htdocs' || $_SERVER['DOCUMENT_ROOT'] == 'C:/wamp64/www') {
         return '/animex/';
     }
     return '';
