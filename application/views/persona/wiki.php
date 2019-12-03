@@ -13,7 +13,7 @@
                     Powers and Stats
                 </div>
                 <div>
-                    <b>Tier:</b> At Least <b>Low 1-C,</b> Possibly 1-A
+                    <b>Tier:</b> At Least <b>Low 1-C,</b> Possibly <b>1-A</b>
                 </div>
                 <div style="margin: 20px 0;">
                     <b>Power and Abilities:</b> Meta Army Manipulation, Absolute Charisma, Reality Warping, Yin and Yang Manipulation, Life and Death Manipulation, All Elements Manipulation, Dream Manipulation, Immortality (Type 1,2,3,4 and 5) and more...
@@ -31,7 +31,18 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    Species:
+                    <b>Chinese:</b>
+                </div>
+                <div class="col-6">
+                    林铭
+                </div>
+            </div>
+            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 50px;">
+                Physical Description
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Species:</b>
                 </div>
                 <div class="col-6">
                     <?php echo $persona->species ?>
@@ -39,10 +50,66 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    Gender:
+                    <b>Gender:</b>
                 </div>
                 <div class="col-6">
                     <?php echo $persona->gender ?>
+                </div>
+            </div>
+            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 50px;">
+                Stats
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Ranking:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Overall Tier:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Appearance:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Charisma:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Achievements:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Power:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Resistance:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Intelligence:</b>
+                </div>
+            </div>
+            <div class="row" style="text-align: center;display: block;font-size: 18pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 50px;">
+                Appearances
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Origin Series:</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <b>Other Series:</b>
                 </div>
             </div>
         </div>
