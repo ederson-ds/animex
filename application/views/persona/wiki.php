@@ -100,16 +100,16 @@
                 </div>
             </div>
             <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;">
-                Appearances
+                Origin
             </div>
             <div class="row">
                 <div class="col-6">
-                    <b>Origin Series:</b>
+                    <b>First:</b>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
-                    <b>Other Series:</b>
+                    <b>Other:</b>
                 </div>
             </div>
         </div>
