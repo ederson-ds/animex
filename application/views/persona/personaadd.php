@@ -35,7 +35,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Serie</label>
+                    <label>Origin Series</label>
+                    <select class="form-control select2-single" name="origin_series_id">
+                        <?php foreach ($series as $serie) { ?>
+                            <option <?php echo ($persona->series_id == $serie->id ? 'selected' : '') ?> value="<?php echo $serie->id ?>"><?php echo $serie->name ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Series</label>
                     <select class="form-control select2-single" name="series_id">
                         <?php foreach ($series as $serie) { ?>
                             <option <?php echo ($persona->series_id == $serie->id ? 'selected' : '') ?> value="<?php echo $serie->id ?>"><?php echo $serie->name ?></option>

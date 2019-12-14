@@ -13,7 +13,7 @@ class Persona extends CI_Controller
         if ($searchText) {
             if ($data["type"] == 'serie') {
                 $data['series'] = $this->serieModel->get_all($searchText);
-            } else {
+            } else if ($data["type"] == 'character') {
                 $data['personas'] = $this->personaModel->get_all($searchText);
                 $data['series'] = $this->serieModel->get_serie_by_personas($data['personas']);
             }
@@ -66,8 +66,10 @@ class Persona extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->model('personaModel');
+        $this->load->model('serieModel');
         $data['persona'] = $this->personaModel->get($id);
-
+        $data['origin_series_name'] = $this->serieModel->get($data['persona']->origin_series_id)->name;
+  
         $this->load->library('session');
         $data["username"] = $this->session->name;
 

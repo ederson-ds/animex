@@ -3,8 +3,10 @@
         text-align: center;
         display: block;
         font-size: 18pt;
-        background: #026575;
+        margin-bottom: 5px;
+        background: #002A32;
         font-weight: bold;
+        line-height: 40px;
         color: white;
     }
 </style>
@@ -30,12 +32,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-4" style="background: blue;width: 310px;flex: 0;">
+        <div class="col-4" style="background: #544C4D; color: #D5D4D4;width: 310px;flex: 0;">
             <div class="row" id='personaName'>
                 <?php echo $persona->name ?>
             </div>
             <div class="row" style="text-align: center;display: block;">
-                <a href="<?php echo base_url() . 'persona/create/' . $persona->id ?>">
+                <a href="<?php echo base_url() . 'persona/create/' . str_replace(' ', '_', $persona->name) . '/' . str_replace(' ', '_', $origin_series_name) ?>">
                     <img src="<?php echo getPersonaImage($persona->id) ?>" alt="Character Image" width="310" height="413">
                 </a>
             </div>
@@ -47,7 +49,7 @@
                     林铭
                 </div>
             </div>
-            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;">
+            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;color: white;">
                 Physical Description
             </div>
             <div class="row">
@@ -66,7 +68,7 @@
                     <?php echo $persona->gender ?>
                 </div>
             </div>
-            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;">
+            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;color: white;">
                 Stats
             </div>
             <div class="row">
@@ -109,7 +111,7 @@
                     <b>Intelligence:</b>
                 </div>
             </div>
-            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;">
+            <div class="row" style="text-align: center;display: block;font-size: 13pt;margin-bottom: 5px;background: #002A32;font-weight: bold;line-height: 35px;color: white;">
                 Origin
             </div>
             <div class="row">

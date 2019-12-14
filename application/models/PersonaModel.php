@@ -9,6 +9,7 @@ class PersonaModel extends CI_Model
     public $gender;
     public $species;
     public $rarity;
+    public $origin_series_id;
     const GENDER_MALE = 1, GENDER_FEMALE = 2;
     const SPECIES_HUMAN = 1, SPECIES_MONSTER = 2, SPECIES_FAUN = 3;
     const RARITY_VERY_RARE = 0, RARITY_EPIC = 1, RARITY_LEGENDARY = 2, RARITY_COMMON = 3,
@@ -45,10 +46,11 @@ class PersonaModel extends CI_Model
 
     public function get($id)
     {
+        $id = str_replace('_', ' ', strtolower($id));
         if (!$id) {
             return $this->createEmptyObject();
         }
-        $query = $this->db->query("SELECT * FROM persona WHERE id = $id");
+        $query = $this->db->query("SELECT * FROM persona WHERE persona.name = '$id'");
         return $query->row();
     }
 
@@ -84,6 +86,11 @@ class PersonaModel extends CI_Model
         $this->gender = $this->input->post('gender');
         $this->species = $this->input->post('species');
         $this->rarity = $this->input->post('rarity');
+
+        $this->load->model('SerieModel');
+        $series = $this->serieModel->get($this->input->post('origin_series_id'));
+        $this->origin_series_id = $series->id;
+
         if ($id) {
             $this->update($id);
             $this->upload($id);
