@@ -10,6 +10,7 @@ class PersonaModel extends CI_Model
     public $species;
     public $rarity;
     public $origin_series_id;
+    public $description;
     const GENDER_MALE = 1, GENDER_FEMALE = 2;
     const SPECIES_HUMAN = 1, SPECIES_MONSTER = 2, SPECIES_FAUN = 3;
     const RARITY_VERY_RARE = 0, RARITY_EPIC = 1, RARITY_LEGENDARY = 2, RARITY_COMMON = 3,
@@ -98,6 +99,14 @@ class PersonaModel extends CI_Model
         }
         $this->db->insert('persona', $this);
         $this->upload($this->db->insert_id());
+    }
+
+    public function insert_description($id)
+    {
+        $this->description = $this->input->post('description');
+        $this->db->set('description', $this->description);
+        $this->db->where('id', $id);
+        $this->db->update('persona');
     }
 
     public function upload($filename)

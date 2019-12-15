@@ -69,7 +69,29 @@ class Persona extends CI_Controller
         $this->load->model('serieModel');
         $data['persona'] = $this->personaModel->get($id);
         $data['origin_series_name'] = $this->serieModel->get($data['persona']->origin_series_id)->name;
-  
+
+        $this->load->library('session');
+        $data["username"] = $this->session->name;
+
+        $this->load->view('navbar', $data);
+        $this->load->view('persona/wiki', $data);
+    }
+
+    public function edit($id)
+    {
+        
+        $data['description'] = true;
+        $this->load->helper('url');
+        $this->load->model('personaModel');
+        $this->load->model('serieModel');
+        $data['persona'] = $this->personaModel->get($id);
+        $data['origin_series_name'] = $this->serieModel->get($data['persona']->origin_series_id)->name;
+
+        if ($this->input->post()) {
+            $this->load->helper('url');
+            $this->personaModel->insert_description($data['persona']->id);
+            redirect(base_url() . 'persona/wiki/' . str_replace(' ', '_', $data['persona']->name) . '/' . str_replace(' ', '_', $data['origin_series_name']), 'refresh');
+        }
         $this->load->library('session');
         $data["username"] = $this->session->name;
 
