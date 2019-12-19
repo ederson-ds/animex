@@ -1,6 +1,6 @@
 <?php
 
-function teste($description)
+function generateText($description)
 {
     $text = '';
     $arr = preg_split("/\r\n|\n|\r/", $description);
