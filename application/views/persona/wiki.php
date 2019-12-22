@@ -29,11 +29,16 @@
             <div class="description" style="margin: 15px;">
                 <?php if (!isset($description)) { ?>
                     <?php
-                   
-                        $this->load->helper('interpreter');
-                        echo generateText($persona->description);
-                        ?>
-                <?php } else { ?>
+
+                    $this->load->helper('interpreter');
+                    echo str_replace('</div><br>', '</div>', generateText($persona->description));
+                    ?>
+                <?php } else {
+                    $this->load->helper('interpreter');
+                    if (!$persona->description) {
+                        $persona->description = generateDefaultText();
+                    }
+                ?>
                     [text] = italic <br>
                     [[text]] = bold <br>
                     {text} = title
