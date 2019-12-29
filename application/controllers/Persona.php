@@ -21,6 +21,26 @@ class Persona extends CI_Controller
             $data['personas'] = $this->personaModel->get_all();
             $data['series'] = $this->serieModel->get_all();
         }
+        $data['num_series'] = $this->serieModel->get_num_series();
+
+        $this->load->library('session');
+        $data["username"] = $this->session->name;
+
+
+
+        $this->load->view('navbar', $data);
+        $this->load->view('persona/persona', $data);
+        $this->load->view('persona/footer', $data);
+    }
+
+    public function page($n_page)
+    {
+        $this->load->helper('url');
+        $this->load->model('personaModel');
+        $this->load->model('serieModel');
+
+        $data['num_series'] = $this->serieModel->get_num_series();
+        $data['series'] = $this->serieModel->get_all(null, $n_page);
 
         $this->load->library('session');
         $data["username"] = $this->session->name;
@@ -79,7 +99,7 @@ class Persona extends CI_Controller
 
     public function edit($id)
     {
-        
+
         $data['description'] = true;
         $this->load->helper('url');
         $this->load->model('personaModel');

@@ -30,6 +30,20 @@
 </style>
 <footer class="footer">
   <div class="container">
-    <span class="text-muted">Nimex.</span>
+    <span class="text-muted">
+      <?php
+      for ($i = 1; $i <= ceil($num_series->qnt / 10); $i++) { ?>
+        <div style="
+    background: aqua;
+    display: inline-block;
+    width: 30px;
+    border: 1px solid black;
+    color: black;
+">
+          <a href="<?php echo base_url() . 'persona/page/' . $i ?>">
+            <?php echo $i ?>
+          </a>
+        </div>
+      <?php } ?></span>
   </div>
 </footer>

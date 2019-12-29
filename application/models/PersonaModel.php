@@ -81,7 +81,7 @@ class PersonaModel extends CI_Model
 
     public function insert($id)
     {
-        $this->name = $this->input->post('name');
+        $this->name = str_replace("'", '-', $this->input->post('name'));
         $this->age = $this->input->post('age');
         $this->series_id = $this->input->post('series_id');
         $this->gender = $this->input->post('gender');
@@ -97,7 +97,18 @@ class PersonaModel extends CI_Model
             $this->upload($id);
             return;
         }
-        $this->db->insert('persona', $this);
+
+        $data = array(
+            'name' => $this->name,
+            'age' => $this->age,
+            'series_id' =>  $this->series_id,
+            'gender' => $this->gender,
+            'species' => $this->species,
+            'rarity' => $this->rarity,
+            'origin_series_id' => $this->origin_series_id,
+        );
+
+        $this->db->insert('persona', $data);
         $this->upload($this->db->insert_id());
     }
 
@@ -126,7 +137,17 @@ class PersonaModel extends CI_Model
 
     public function update($id)
     {
-        $this->db->update('persona', $this, array('id' => $id));
+        $data = array(
+            'name' => $this->name,
+            'age' => $this->age,
+            'series_id' =>  $this->series_id,
+            'gender' => $this->gender,
+            'species' => $this->species,
+            'rarity' => $this->rarity,
+            'origin_series_id' => $this->origin_series_id,
+        );
+
+        $this->db->update('persona', $data, array('id' => $id));
     }
 
     public function delete($id)

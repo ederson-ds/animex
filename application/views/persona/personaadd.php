@@ -8,7 +8,7 @@
             <form action="<?php echo base_url() ?>persona/create/<?php echo $persona->id; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo $persona->name; ?>">
+                    <input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo str_replace("-", "'", $persona->name); ?>">
                 </div>
                 <div class="form-group">
                     <label>Age</label>
