@@ -19,7 +19,7 @@ class SerieModel extends CI_Model
         return $query->row();
     }
 
-    public function get_all($pesquisar = null, $n_page = 1)
+    public function get_all_limit($pesquisar = null, $n_page = 1)
     {
         if ($pesquisar) {
             $this->db->select('*');
@@ -34,6 +34,13 @@ class SerieModel extends CI_Model
             $query = $this->db->get('series');
         }
 
+        return $query->result();
+    }
+
+    public function get_all()
+    {
+        $this->db->order_by("name");
+        $query = $this->db->get('series');
         return $query->result();
     }
 

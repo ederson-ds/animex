@@ -12,14 +12,14 @@ class Persona extends CI_Controller
         $searchText = $data["searchText"];
         if ($searchText) {
             if ($data["type"] == 'serie') {
-                $data['series'] = $this->serieModel->get_all($searchText);
+                $data['series'] = $this->serieModel->get_all_limit($searchText);
             } else if ($data["type"] == 'character') {
                 $data['personas'] = $this->personaModel->get_all($searchText);
                 $data['series'] = $this->serieModel->get_serie_by_personas($data['personas']);
             }
         } else {
             $data['personas'] = $this->personaModel->get_all();
-            $data['series'] = $this->serieModel->get_all();
+            $data['series'] = $this->serieModel->get_all_limit();
         }
         $data['num_series'] = $this->serieModel->get_num_series();
 
@@ -40,7 +40,7 @@ class Persona extends CI_Controller
         $this->load->model('serieModel');
 
         $data['num_series'] = $this->serieModel->get_num_series();
-        $data['series'] = $this->serieModel->get_all(null, $n_page);
+        $data['series'] = $this->serieModel->get_all_limit(null, $n_page);
 
         $this->load->library('session');
         $data["username"] = $this->session->name;

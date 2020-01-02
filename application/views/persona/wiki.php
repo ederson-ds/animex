@@ -63,7 +63,7 @@
                 <?php echo $persona->name ?>
             </div>
             <div class="row" style="text-align: center;display: block;">
-                <a href="<?php echo base_url() . 'persona/create/' . str_replace(' ', '_', $persona->name) . '/' . str_replace(' ', '_', $origin_series_name) ?>">
+                <a href="<?php echo base_url() . 'persona/create/' . str_replace(' ', '_', $persona->name) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name)) ?>">
                     <img src="<?php echo getPersonaImage($persona->id) ?>" alt="Character Image" width="310" height="413">
                 </a>
             </div>
