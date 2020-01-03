@@ -99,7 +99,6 @@ class Persona extends CI_Controller
 
     public function edit($id)
     {
-
         $data['description'] = true;
         $this->load->helper('url');
         $this->load->model('personaModel');
@@ -110,7 +109,7 @@ class Persona extends CI_Controller
         if ($this->input->post()) {
             $this->load->helper('url');
             $this->personaModel->insert_description($data['persona']->id);
-            redirect(base_url() . 'persona/wiki/' . str_replace(' ', '_', $data['persona']->name) . '/' . str_replace(' ', '_', $data['origin_series_name']), 'refresh');
+            redirect(base_url() . 'persona/wiki/' . str_replace(' ', '_', $data['persona']->name) . '/' . str_replace("'", '-', str_replace(' ', '_', $data['origin_series_name'])), 'refresh');
         }
         $this->load->library('session');
         $data["username"] = $this->session->name;

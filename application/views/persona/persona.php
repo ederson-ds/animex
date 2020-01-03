@@ -121,10 +121,10 @@
                                 </div>
 
                             </a>
-                            <div style="">
+                            <div>
                                 <?php echo str_replace("-", "'", $persona->name); ?>
                             </div>
-                            <div style="">
+                            <div>
                                 <?php echo PersonaModel::$rarityType[$persona->rarity]; ?>
                             </div>
                         </div>

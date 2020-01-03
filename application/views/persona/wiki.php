@@ -23,7 +23,7 @@
 <div class="container" style="margin-top: 133px;">
     <div class="row">
         <div class="col-8" style="background: #003838; color: #FDD1BF">
-            <a href="<?php echo base_url() . 'persona/edit/' . str_replace(' ', '_', $persona->name) . '/' . str_replace(' ', '_', $origin_series_name) ?>">
+            <a href="<?php echo base_url() . 'persona/edit/' . str_replace(' ', '_', $persona->name) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name)) ?>">
                 <img src="<?php echo base_url() . 'dist/settings.png' ?>" alt="Edit" style="float: right;">
             </a>
             <div class="description" style="margin: 15px;">
@@ -47,7 +47,7 @@
                         <div class="form-group" style="margin-top: 10px;">
                             <div class="row">
                                 <div class="col-4">
-                                    <a href="<?php echo base_url() . 'persona/wiki/' . str_replace(' ', '_', $persona->name) . '/' . str_replace(' ', '_', $origin_series_name)  ?>" class="btn btn-secondary form-control">Back</a>
+                                    <a href="<?php echo base_url() . 'persona/wiki/' . str_replace(' ', '_', $persona->name) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name))  ?>" class="btn btn-secondary form-control">Back</a>
                                 </div>
                                 <div class="col-8">
                                     <input type="submit" class="btn btn-primary form-control" value="Send">
