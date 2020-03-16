@@ -55,7 +55,8 @@ class PersonaModel extends CI_Model
         $origin_series = str_replace('_', ' ', $origin_series);
 
         $query = $this->db->query(
-        "SELECT * FROM persona
+        "SELECT persona.id as id, persona.name, age, series_id, gender, species, rarity, origin_series_id, description, series.name 
+        FROM persona
         JOIN series ON series.id = persona.origin_series_id
         WHERE persona.name = '$id' AND
         series.name = '$origin_series'"
