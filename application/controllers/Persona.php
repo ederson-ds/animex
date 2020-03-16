@@ -82,12 +82,12 @@ class Persona extends CI_Controller
         redirect('persona', 'refresh');
     }
 
-    public function wiki($id)
+    public function wiki($id, $origin_series)
     {
         $this->load->helper('url');
         $this->load->model('personaModel');
         $this->load->model('serieModel');
-        $data['persona'] = $this->personaModel->get($id);
+        $data['persona'] = $this->personaModel->get($id, $origin_series);
         $data['origin_series_name'] = $this->serieModel->get($data['persona']->origin_series_id)->name;
 
         $this->load->library('session');

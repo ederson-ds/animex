@@ -45,13 +45,21 @@ class PersonaModel extends CI_Model
         $this->load->database();
     }
 
-    public function get($id)
+    public function get($id, $origin_series)
     {
         $id = str_replace('_', ' ', strtolower($id));
         if (!$id) {
             return $this->createEmptyObject();
         }
-        $query = $this->db->query("SELECT * FROM persona WHERE persona.name = '$id'");
+
+        $origin_series = str_replace('_', ' ', $origin_series);
+
+        $query = $this->db->query(
+        "SELECT * FROM persona
+        JOIN series ON series.id = persona.origin_series_id
+        WHERE persona.name = '$id' AND
+        series.name = '$origin_series'"
+        );
         return $query->row();
     }
 
