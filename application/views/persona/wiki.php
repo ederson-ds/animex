@@ -23,7 +23,7 @@
 <div class="container" style="margin-top: 133px;">
     <div class="row">
         <div class="col-8" style="background: #003838; color: #FDD1BF">
-            <a href="<?php echo base_url() . 'persona/edit/' . str_replace(' ', '_', $persona->name) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name)) ?>">
+            <a href="<?php echo base_url() . 'persona/edit/' . str_replace(' ', '_', $persona->personaname) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name)) ?>">
                 <img src="<?php echo base_url() . 'dist/settings.png' ?>" alt="Edit" style="float: right;">
             </a>
             <div class="description" style="margin: 15px;">
@@ -42,12 +42,12 @@
                     [text] = italic <br>
                     [[text]] = bold <br>
                     {text} = title
-                    <form action="<?php echo base_url() ?>persona/edit/<?php echo str_replace(' ', '_', $persona->name); ?>" method="post">
+                    <form action="<?php echo base_url() ?>persona/edit/<?php echo str_replace(' ', '_', $persona->personaname); ?>/<?php echo str_replace(' ', '_', $origin_series_name); ?>" method="post">
                         <textarea class="form-control" name="description" rows="20" cols="50" style="width: 100%;"><?php echo $persona->description ?></textarea>
                         <div class="form-group" style="margin-top: 10px;">
                             <div class="row">
                                 <div class="col-4">
-                                    <a href="<?php echo base_url() . 'persona/wiki/' . str_replace(' ', '_', $persona->name) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name))  ?>" class="btn btn-secondary form-control">Back</a>
+                                    <a href="<?php echo base_url() . 'persona/wiki/' . str_replace(' ', '_', $persona->personaname) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name))  ?>" class="btn btn-secondary form-control">Back</a>
                                 </div>
                                 <div class="col-8">
                                     <input type="submit" class="btn btn-primary form-control" value="Send">
@@ -60,10 +60,10 @@
         </div>
         <div class="col-4" style="background: #544C4D; color: #D5D4D4;width: 310px;flex: 0;">
             <div class="row" id='personaName'>
-                <?php echo $persona->name ?>
+                <?php echo $persona->personaname ?>
             </div>
             <div class="row" style="text-align: center;display: block;">
-                <a href="<?php echo base_url() . 'persona/create/' . str_replace(' ', '_', $persona->name) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name)) ?>">
+                <a href="<?php echo base_url() . 'persona/create/' . str_replace(' ', '_', $persona->personaname) . '/' . str_replace("'", '-', str_replace(' ', '_', $origin_series_name)) ?>">
                     <img src="<?php echo getPersonaImage($persona->id) ?>" alt="Character Image" width="310" height="413">
                 </a>
             </div>

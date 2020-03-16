@@ -50,13 +50,13 @@ class Persona extends CI_Controller
         $this->load->view('persona/footer', $data);
     }
 
-    public function create($id = null)
+    public function create($id = null, $origin_series = null)
     {
         $this->load->helper('url');
         $this->load->model('personaModel');
         $this->load->model('serieModel');
         $data['id'] = $id;
-        $data['persona'] = $this->personaModel->get($id);
+        $data['persona'] = $this->personaModel->get($id, $origin_series);
         $data['series'] = $this->serieModel->get_all();
         $data['gender'] = PersonaModel::$genderType;
         $data['species'] = PersonaModel::$speciesType;
@@ -97,19 +97,19 @@ class Persona extends CI_Controller
         $this->load->view('persona/wiki', $data);
     }
 
-    public function edit($id)
+    public function edit($id, $origin_series)
     {
         $data['description'] = true;
         $this->load->helper('url');
         $this->load->model('personaModel');
         $this->load->model('serieModel');
-        $data['persona'] = $this->personaModel->get($id);
+        $data['persona'] = $this->personaModel->get($id, $origin_series);
         $data['origin_series_name'] = $this->serieModel->get($data['persona']->origin_series_id)->name;
 
         if ($this->input->post()) {
             $this->load->helper('url');
             $this->personaModel->insert_description($data['persona']->id);
-            redirect(base_url() . 'persona/wiki/' . str_replace(' ', '_', $data['persona']->name) . '/' . str_replace("'", '-', str_replace(' ', '_', $data['origin_series_name'])), 'refresh');
+            redirect(base_url() . 'persona/wiki/' . str_replace(' ', '_', $data['persona']->personaname) . '/' . str_replace("'", '-', str_replace(' ', '_', $data['origin_series_name'])), 'refresh');
         }
         $this->load->library('session');
         $data["username"] = $this->session->name;
